@@ -1,0 +1,38 @@
+// Every photo, in the order it appeared in the original gallery.
+const galleryImages = [
+  'IMG-20240707-WA0081.jpg',
+  'IMG-20240707-WA0082.jpg',
+  'IMG-20240707-WA0085.jpg',
+  'IMG-20240707-WA0086.jpg',
+  'IMG-20240707-WA0087.jpg',
+  'IMG-20240707-WA0088.jpg',
+  'IMG-20240707-WA0089.jpg',
+  'IMG-20240707-WA0090.jpg',
+  'IMG-20240707-WA0091.jpg',
+  'IMG-20240707-WA0092.jpg',
+  'gallery 11.jpg',
+  'gallery 12.jpg',
+  'gallery 13.jpg',
+  'gallery 14.jpg',
+  'gallery 15.jpg',
+  'gallery 16.jpg',
+  'gallery 17.jpg',
+  'gallery 18.jpg',
+  'gallery 19.jpg',
+  'gallery 20.jpg',
+  'gallery 21.jpg',
+  'gallery 22.jpg',
+  'gallery 23.jpg',
+  'gallery 24.jpg',
+  'gallery 25.jpg',
+  'gallery 26.jpg',
+  'gallery 27.jpg',
+  'gallery 28.jpg',
+  'gallery 29.jpg',
+  'gallery 30.jpg',
+].map((file, i) => ({
+  src: `/images/${file}`,
+  alt: `Prince Michael Adakole Ochojila — photo ${i + 1}`,
+}))
+
+export default galleryImages

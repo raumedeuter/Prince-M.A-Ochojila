@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Idoma-grounded palette: red + black from the "Apa/Edema" cloth, on ivory */
+  --color-ivory: #F4EFE6;
+  --color-ink: #1A1512;
+  --color-oxblood: #7C1D1D;
+  --color-oxblood-dark: #5E1515;
+  --color-gold: #B08D3E;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
