@@ -28,10 +28,10 @@ export default function Home() {
               Read His Biography
             </Link>
             <Link
-              to="/events"
+              to="/gallery"
               className="px-6 py-3 border border-ink/20 text-ink text-sm rounded-sm hover:border-oxblood hover:text-oxblood transition-colors"
             >
-              Watch the Service
+              View The Gallery
             </Link>
           </div>
         </div>
