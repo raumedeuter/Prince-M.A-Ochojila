@@ -1,6 +1,8 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 
 export default function Lightbox({ images, index, onClose, onNavigate }) {
+  const touchStart = useRef(null)
+
   const goPrev = useCallback(
     () => onNavigate((index - 1 + images.length) % images.length),
     [index, images.length, onNavigate]
@@ -24,12 +26,33 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
     }
   }, [onClose, goPrev, goNext])
 
+  const handleTouchStart = (e) => {
+    const t = e.touches[0]
+    touchStart.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart.current) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - touchStart.current.x
+    const dy = t.clientY - touchStart.current.y
+    touchStart.current = null
+
+    // Must be a deliberate, mostly-horizontal swipe
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      if (dx < 0) goNext()
+      else goPrev()
+    }
+  }
+
   const image = images[index]
 
   return (
     <div
       className="fixed inset-0 z-[100] bg-ink/95 flex items-center justify-center px-4"
       onClick={onClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <button
         onClick={onClose}
