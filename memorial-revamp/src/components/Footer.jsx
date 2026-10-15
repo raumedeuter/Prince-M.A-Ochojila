@@ -9,6 +9,17 @@ export default function Footer() {
         <p className="text-xs text-ink/40 mt-4">
           A site built in his honour, with love.
         </p>
+        <p className="text-xs text-ink/40">
+          Designed &amp; built by{' '}
+          <a
+            href="https://michaelben-ikheloah.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink/60 underline underline-offset-4 decoration-ink/20 hover:text-oxblood hover:decoration-oxblood transition-colors"
+          >
+            Michael E. Ben-Ikheloah
+          </a>
+        </p>
       </div>
     </footer>
   )
